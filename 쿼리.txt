@@ -1,0 +1,1643 @@
+-- 삭제
+ALTER TABLE mth_item
+	DROP
+		CONSTRAINT FK_mth_item_type_TO_mth_item
+		CASCADE;
+
+ALTER TABLE mth_item
+	DROP
+		CONSTRAINT FK_mth_brand_TO_mth_item
+		CASCADE;
+
+ALTER TABLE mth_item_like
+	DROP
+		CONSTRAINT FK_mth_item_TO_mth_item_like
+		CASCADE;
+
+ALTER TABLE mth_item_like
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_item_like
+		CASCADE;
+
+ALTER TABLE mth_item_re
+	DROP
+		CONSTRAINT FK_mth_item_TO_mth_item_re
+		CASCADE;
+
+ALTER TABLE mth_item_re
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_item_re
+		CASCADE;
+
+ALTER TABLE mth_yum_re
+	DROP
+		CONSTRAINT FK_mth_yum_TO_mth_yum_re
+		CASCADE;
+
+ALTER TABLE mth_yum_re
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_yum_re
+		CASCADE;
+
+ALTER TABLE mth_favor
+	DROP
+		CONSTRAINT FK_mth_item_type_TO_mth_favor
+		CASCADE;
+
+ALTER TABLE mth_favor
+	DROP
+		CONSTRAINT FK_mth_brand_TO_mth_favor
+		CASCADE;
+
+ALTER TABLE mth_favor
+	DROP
+		CONSTRAINT FK_mth_state_TO_mth_favor
+		CASCADE;
+
+ALTER TABLE mth_favor
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_favor
+		CASCADE;
+
+ALTER TABLE mth_yum_like
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_yum_like
+		CASCADE;
+
+ALTER TABLE mth_yum_like
+	DROP
+		CONSTRAINT FK_mth_yum_TO_mth_yum_like
+		CASCADE;
+
+ALTER TABLE mth_yum
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_yum
+		CASCADE;
+
+ALTER TABLE mth_yummy_img
+	DROP
+		CONSTRAINT FK_mth_yum_TO_mth_yummy_img
+		CASCADE;
+
+ALTER TABLE mth_prod
+	DROP
+		CONSTRAINT FK_mth_conven_TO_mth_prod
+		CASCADE;
+
+ALTER TABLE mth_prod
+	DROP
+		CONSTRAINT FK_mth_item_TO_mth_prod
+		CASCADE;
+
+ALTER TABLE mth_conven
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_conven
+		CASCADE;
+
+ALTER TABLE mth_conven
+	DROP
+		CONSTRAINT FK_mth_brand_TO_mth_conven
+		CASCADE;
+
+ALTER TABLE mth_conven
+	DROP
+		CONSTRAINT FK_mth_state_TO_mth_conven
+		CASCADE;
+
+ALTER TABLE mth_conven_re
+	DROP
+		CONSTRAINT FK_mth_conven_TO_mth_conven_re
+		CASCADE;
+
+ALTER TABLE mth_conven_re
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_conven_re
+		CASCADE;
+
+ALTER TABLE mth_free_like
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_free_like
+		CASCADE;
+
+ALTER TABLE mth_free_like
+	DROP
+		CONSTRAINT FK_mth_free_TO_mth_free_like
+		CASCADE;
+
+ALTER TABLE mth_free
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_free
+		CASCADE;
+
+ALTER TABLE mth_free_img
+	DROP
+		CONSTRAINT FK_mth_free_TO_mth_free_img
+		CASCADE;
+
+ALTER TABLE mth_report
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_report
+		CASCADE;
+
+ALTER TABLE mth_free_re
+	DROP
+		CONSTRAINT FK_mth_free_TO_mth_free_re
+		CASCADE;
+
+ALTER TABLE mth_free_re
+	DROP
+		CONSTRAINT FK_mth_member_TO_mth_free_re
+		CASCADE;
+
+ALTER TABLE mth_member_mail
+	DROP
+		CONSTRAINT FK_mth_member_mail
+		CASCADE;
+
+ALTER TABLE mth_item_type
+	DROP
+		UNIQUE (
+			item_type_name
+		)
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_brand
+	DROP
+		UNIQUE (
+			brand_name
+		)
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_state
+	DROP
+		UNIQUE (
+			state_name
+		)
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_member
+	DROP
+		UNIQUE (
+			member_id,
+			member_nick,
+			member_email,
+			member_companynum
+		)
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_item_type
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_brand
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_state
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_item
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_item_like
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_item_re
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_yum_re
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_favor
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_member
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_yum_like
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_yum
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_yummy_img
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_prod
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_conven
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_conven_re
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_free_like
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_free
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_free_img
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_report
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_free_re
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+ALTER TABLE mth_member_mail
+	DROP
+		PRIMARY KEY
+		CASCADE
+		KEEP INDEX;
+
+/* mth_item_type */
+DROP TABLE mth_item_type 
+	CASCADE CONSTRAINTS;
+
+/* mth_brand */
+DROP TABLE mth_brand 
+	CASCADE CONSTRAINTS;
+
+/* mth_state */
+DROP TABLE mth_state 
+	CASCADE CONSTRAINTS;
+
+/* mth_item */
+DROP TABLE mth_item 
+	CASCADE CONSTRAINTS;
+
+/* mth_item_like */
+DROP TABLE mth_item_like 
+	CASCADE CONSTRAINTS;
+
+/* mth_item_re */
+DROP TABLE mth_item_re 
+	CASCADE CONSTRAINTS;
+
+/* mth_yum_re */
+DROP TABLE mth_yum_re 
+	CASCADE CONSTRAINTS;
+
+/* mth_favor */
+DROP TABLE mth_favor 
+	CASCADE CONSTRAINTS;
+
+/* mth_member */
+DROP TABLE mth_member 
+	CASCADE CONSTRAINTS;
+
+/* mth_yum_like */
+DROP TABLE mth_yum_like 
+	CASCADE CONSTRAINTS;
+
+/* mth_yum */
+DROP TABLE mth_yum 
+	CASCADE CONSTRAINTS;
+
+/* mth_yum_img */
+DROP TABLE mth_yummy_img 
+	CASCADE CONSTRAINTS;
+
+/* mth_prod */
+DROP TABLE mth_prod 
+	CASCADE CONSTRAINTS;
+
+/* mth_conven */
+DROP TABLE mth_conven 
+	CASCADE CONSTRAINTS;
+
+/* mth_conven_re */
+DROP TABLE mth_conven_re 
+	CASCADE CONSTRAINTS;
+
+/* mth_free_like */
+DROP TABLE mth_free_like 
+	CASCADE CONSTRAINTS;
+
+/* mth_free */
+DROP TABLE mth_free 
+	CASCADE CONSTRAINTS;
+
+/* mth_free_img */
+DROP TABLE mth_free_img 
+	CASCADE CONSTRAINTS;
+
+/* mth_report */
+DROP TABLE mth_report 
+	CASCADE CONSTRAINTS;
+
+/* mth_free_re */
+DROP TABLE mth_free_re 
+	CASCADE CONSTRAINTS;
+
+/* mth_member_mail */
+DROP TABLE mth_member_mail 
+	CASCADE CONSTRAINTS;
+--삭제 끝
+--시퀀스 삭제
+DROP SEQUENCE seq_brand_idx;
+DROP SEQUENCE seq_conven_idx;
+DROP SEQUENCE seq_conven_re_idx;
+DROP SEQUENCE seq_delmember_idx;
+DROP SEQUENCE seq_free_idx;
+DROP SEQUENCE seq_free_img_idx;
+DROP SEQUENCE seq_free_re_idx;
+DROP SEQUENCE seq_item_idx;
+DROP SEQUENCE seq_item_re_idx;
+DROP SEQUENCE seq_item_type_idx;
+DROP SEQUENCE seq_member_idx;
+DROP SEQUENCE seq_prod_idx;
+DROP SEQUENCE seq_report_idx;
+DROP SEQUENCE seq_state_idx;
+DROP SEQUENCE seq_yum_idx;
+DROP SEQUENCE seq_yum_img_idx;
+DROP SEQUENCE seq_yum_re_idx;
+--시퀀스 삭제 끝
+--테이블 생성
+/* mth_item_type */
+CREATE TABLE mth_item_type (
+	item_type_idx NUMBER(10) NOT NULL, /* item_type_idx */
+	item_type_name VARCHAR2(40) NOT NULL /* item_type_name */
+);
+
+COMMENT ON TABLE mth_item_type IS 'mth_item_type';
+
+COMMENT ON COLUMN mth_item_type.item_type_idx IS 'item_type_idx';
+
+COMMENT ON COLUMN mth_item_type.item_type_name IS 'item_type_name';
+
+CREATE UNIQUE INDEX PK_mth_item_type
+	ON mth_item_type (
+		item_type_idx ASC
+	);
+
+CREATE UNIQUE INDEX UIX_mth_item_type
+	ON mth_item_type (
+		item_type_name ASC
+	);
+
+ALTER TABLE mth_item_type
+	ADD
+		CONSTRAINT PK_mth_item_type
+		PRIMARY KEY (
+			item_type_idx
+		);
+
+ALTER TABLE mth_item_type
+	ADD
+		CONSTRAINT UK_mth_item_type
+		UNIQUE (
+			item_type_name
+		);
+
+/* mth_brand */
+CREATE TABLE mth_brand (
+	brand_idx NUMBER(10) NOT NULL, /* brand_idx */
+	brand_name VARCHAR2(20) NOT NULL /* brand_name */
+);
+
+COMMENT ON TABLE mth_brand IS 'mth_brand';
+
+COMMENT ON COLUMN mth_brand.brand_idx IS 'brand_idx';
+
+COMMENT ON COLUMN mth_brand.brand_name IS 'brand_name';
+
+CREATE UNIQUE INDEX PK_mth_brand
+	ON mth_brand (
+		brand_idx ASC
+	);
+
+CREATE UNIQUE INDEX UIX_mth_brand
+	ON mth_brand (
+		brand_name ASC
+	);
+
+ALTER TABLE mth_brand
+	ADD
+		CONSTRAINT PK_mth_brand
+		PRIMARY KEY (
+			brand_idx
+		);
+
+ALTER TABLE mth_brand
+	ADD
+		CONSTRAINT UK_mth_brand
+		UNIQUE (
+			brand_name
+		);
+
+/* mth_state */
+CREATE TABLE mth_state (
+	state_idx NUMBER(10) NOT NULL, /* state_idx */
+	state_name VARCHAR2(20) NOT NULL /* state_name */
+);
+
+COMMENT ON TABLE mth_state IS 'mth_state';
+
+COMMENT ON COLUMN mth_state.state_idx IS 'state_idx';
+
+COMMENT ON COLUMN mth_state.state_name IS 'state_name';
+
+CREATE UNIQUE INDEX PK_mth_state
+	ON mth_state (
+		state_idx ASC
+	);
+
+CREATE UNIQUE INDEX UIX_mth_state
+	ON mth_state (
+		state_name ASC
+	);
+
+ALTER TABLE mth_state
+	ADD
+		CONSTRAINT PK_mth_state
+		PRIMARY KEY (
+			state_idx
+		);
+
+ALTER TABLE mth_state
+	ADD
+		CONSTRAINT UK_mth_state
+		UNIQUE (
+			state_name
+		);
+
+/* mth_item */
+CREATE TABLE mth_item (
+	item_idx NUMBER(10) NOT NULL, /* item_idx */
+	brand_idx NUMBER(10) NOT NULL, /* brand_idx */
+	item_type_idx NUMBER(10) NOT NULL, /* item_type_idx */
+	item_name VARCHAR2(60) NOT NULL, /* item_name */
+	item_originprice NUMBER(10) NOT NULL, /* item_originprice */
+	item_imgfilename VARCHAR2(200) NOT NULL, /* item_imgfilename */
+	item_content VARCHAR2(200) NOT NULL, /* item_content */
+	item_condition VARCHAR2(20) NOT NULL /* item_condition */
+);
+
+COMMENT ON TABLE mth_item IS 'mth_item';
+
+COMMENT ON COLUMN mth_item.item_idx IS 'item_idx';
+
+COMMENT ON COLUMN mth_item.brand_idx IS 'brand_idx';
+
+COMMENT ON COLUMN mth_item.item_type_idx IS 'item_type_idx';
+
+COMMENT ON COLUMN mth_item.item_name IS 'item_name';
+
+COMMENT ON COLUMN mth_item.item_originprice IS 'item_originprice';
+
+COMMENT ON COLUMN mth_item.item_imgfilename IS 'item_imgfilename';
+
+COMMENT ON COLUMN mth_item.item_content IS 'item_content';
+
+COMMENT ON COLUMN mth_item.item_condition IS 'item_condition';
+
+CREATE UNIQUE INDEX PK_mth_item
+	ON mth_item (
+		item_idx ASC
+	);
+
+ALTER TABLE mth_item
+	ADD
+		CONSTRAINT PK_mth_item
+		PRIMARY KEY (
+			item_idx
+		);
+
+/* mth_item_like */
+CREATE TABLE mth_item_like (
+	item_idx NUMBER(10) NOT NULL, /* item_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	item_like_regdate DATE NOT NULL /* item_like_regdate */
+);
+
+COMMENT ON TABLE mth_item_like IS 'mth_item_like';
+
+COMMENT ON COLUMN mth_item_like.item_idx IS 'item_idx';
+
+COMMENT ON COLUMN mth_item_like.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_item_like.item_like_regdate IS 'item_like_regdate';
+
+CREATE UNIQUE INDEX PK_mth_item_like
+	ON mth_item_like (
+		item_idx ASC,
+		member_idx ASC
+	);
+
+ALTER TABLE mth_item_like
+	ADD
+		CONSTRAINT PK_mth_item_like
+		PRIMARY KEY (
+			item_idx,
+			member_idx
+		);
+
+/* mth_item_re */
+CREATE TABLE mth_item_re (
+	item_re_idx NUMBER(10) NOT NULL, /* item_re_idx */
+	item_idx NUMBER(10) NOT NULL, /* item_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	item_re_content VARCHAR2(100) NOT NULL, /* item_re_content */
+	item_re_state VARCHAR2(20) NOT NULL, /* item_re_state */
+	item_re_writedate DATE NOT NULL /* item_re_writedate */
+);
+
+COMMENT ON TABLE mth_item_re IS 'mth_item_re';
+
+COMMENT ON COLUMN mth_item_re.item_re_idx IS 'item_re_idx';
+
+COMMENT ON COLUMN mth_item_re.item_idx IS 'item_idx';
+
+COMMENT ON COLUMN mth_item_re.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_item_re.item_re_content IS 'item_re_content';
+
+COMMENT ON COLUMN mth_item_re.item_re_state IS 'item_re_state';
+
+COMMENT ON COLUMN mth_item_re.item_re_writedate IS 'item_re_writedate';
+
+CREATE UNIQUE INDEX PK_mth_item_re
+	ON mth_item_re (
+		item_re_idx ASC
+	);
+
+ALTER TABLE mth_item_re
+	ADD
+		CONSTRAINT PK_mth_item_re
+		PRIMARY KEY (
+			item_re_idx
+		);
+
+/* mth_yum_re */
+CREATE TABLE mth_yum_re (
+	yum_re_idx NUMBER(10) NOT NULL, /* yum_re_idx */
+	yum_idx NUMBER(10) NOT NULL, /* yum_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	yum_re_content VARCHAR2(100) NOT NULL, /* yum_re_content */
+	yum_re_state VARCHAR2(20) NOT NULL, /* yum_re_state */
+	yum_re_writedate DATE NOT NULL /* yum_re_writedate */
+);
+
+COMMENT ON TABLE mth_yum_re IS 'mth_yum_re';
+
+COMMENT ON COLUMN mth_yum_re.yum_re_idx IS 'yum_re_idx';
+
+COMMENT ON COLUMN mth_yum_re.yum_idx IS 'yum_idx';
+
+COMMENT ON COLUMN mth_yum_re.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_yum_re.yum_re_content IS 'yum_re_content';
+
+COMMENT ON COLUMN mth_yum_re.yum_re_state IS 'yum_re_state';
+
+COMMENT ON COLUMN mth_yum_re.yum_re_writedate IS 'yum_re_writedate';
+
+CREATE UNIQUE INDEX PK_mth_yum_re
+	ON mth_yum_re (
+		yum_re_idx ASC
+	);
+
+ALTER TABLE mth_yum_re
+	ADD
+		CONSTRAINT PK_mth_yum_re
+		PRIMARY KEY (
+			yum_re_idx
+		);
+
+/* mth_favor */
+CREATE TABLE mth_favor (
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	brand_idx NUMBER(10), /* brand_idx */
+	state_idx NUMBER(10), /* state_idx */
+	item_type_idx NUMBER(10) /* item_type_idx */
+);
+
+COMMENT ON TABLE mth_favor IS 'mth_favor';
+
+COMMENT ON COLUMN mth_favor.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_favor.brand_idx IS 'brand_idx';
+
+COMMENT ON COLUMN mth_favor.state_idx IS 'state_idx';
+
+COMMENT ON COLUMN mth_favor.item_type_idx IS 'item_type_idx';
+
+CREATE UNIQUE INDEX PK_mth_favor
+	ON mth_favor (
+		member_idx ASC
+	);
+
+ALTER TABLE mth_favor
+	ADD
+		CONSTRAINT PK_mth_favor
+		PRIMARY KEY (
+			member_idx
+		);
+
+/* mth_member */
+CREATE TABLE mth_member (
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	member_id VARCHAR2(20) NOT NULL, /* member_id */
+	member_pw VARCHAR2(80) NOT NULL, /* member_pw */
+	member_nick VARCHAR2(20) NOT NULL, /* member_nick */
+	member_email VARCHAR2(40) NOT NULL, /* member_email */
+	member_code VARCHAR2(10) NOT NULL, /* member_code */
+	member_joindate DATE NOT NULL, /* member_joindate */
+	member_name VARCHAR2(20), /* member_name */
+	member_phone VARCHAR2(20), /* member_phone */
+	member_companynum VARCHAR2(40) /* member_companynum */
+);
+
+COMMENT ON TABLE mth_member IS 'mth_member';
+
+COMMENT ON COLUMN mth_member.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_member.member_id IS 'member_id';
+
+COMMENT ON COLUMN mth_member.member_pw IS 'member_pw';
+
+COMMENT ON COLUMN mth_member.member_nick IS 'member_nick';
+
+COMMENT ON COLUMN mth_member.member_email IS 'member_email';
+
+COMMENT ON COLUMN mth_member.member_code IS 'member_code';
+
+COMMENT ON COLUMN mth_member.member_joindate IS 'member_joindate';
+
+COMMENT ON COLUMN mth_member.member_name IS 'member_name';
+
+COMMENT ON COLUMN mth_member.member_phone IS 'member_phone';
+
+COMMENT ON COLUMN mth_member.member_companynum IS 'member_companynum';
+
+CREATE UNIQUE INDEX PK_mth_member
+	ON mth_member (
+		member_idx ASC
+	);
+
+CREATE UNIQUE INDEX UIX_mth_member
+	ON mth_member (
+		member_id ASC
+	);
+
+CREATE UNIQUE INDEX UIX_mth_member2
+	ON mth_member (
+		member_email ASC
+	);
+
+CREATE UNIQUE INDEX UIX_mth_member3
+	ON mth_member (
+		member_companynum ASC
+	);
+
+ALTER TABLE mth_member
+	ADD
+		CONSTRAINT PK_mth_member
+		PRIMARY KEY (
+			member_idx
+		);
+
+ALTER TABLE mth_member
+	ADD
+		CONSTRAINT UK_mth_member
+		UNIQUE (
+			member_id
+		);
+
+ALTER TABLE mth_member
+	ADD
+		CONSTRAINT UK_mth_member2
+		UNIQUE (
+			member_email
+		);
+
+ALTER TABLE mth_member
+	ADD
+		CONSTRAINT UK_mth_member3
+		UNIQUE (
+			member_companynum
+		);
+
+/* mth_yum_like */
+CREATE TABLE mth_yum_like (
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	yum_idx NUMBER(10) NOT NULL, /* yum_idx */
+	yum_like_regdate DATE NOT NULL /* yum_like_regdate */
+);
+
+COMMENT ON TABLE mth_yum_like IS 'mth_yum_like';
+
+COMMENT ON COLUMN mth_yum_like.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_yum_like.yum_idx IS 'yum_idx';
+
+COMMENT ON COLUMN mth_yum_like.yum_like_regdate IS 'yum_like_regdate';
+
+CREATE UNIQUE INDEX PK_mth_yum_like
+	ON mth_yum_like (
+		member_idx ASC,
+		yum_idx ASC
+	);
+
+ALTER TABLE mth_yum_like
+	ADD
+		CONSTRAINT PK_mth_yum_like
+		PRIMARY KEY (
+			member_idx,
+			yum_idx
+		);
+
+/* mth_yum */
+CREATE TABLE mth_yum (
+	yum_idx NUMBER(10) NOT NULL, /* yum_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	yum_category VARCHAR2(10) NOT NULL, /* yum_category */
+	yum_title VARCHAR2(80) NOT NULL, /* yum_title */
+	yum_content VARCHAR2(4000) NOT NULL, /* yum_content */
+	yum_state VARCHAR2(20) NOT NULL, /* yum_state */
+	yum_count NUMBER(20) NOT NULL, /* yum_count */
+	yum_writedate DATE NOT NULL /* yum_writedate */
+);
+
+COMMENT ON TABLE mth_yum IS 'mth_yum';
+
+COMMENT ON COLUMN mth_yum.yum_idx IS 'yum_idx';
+
+COMMENT ON COLUMN mth_yum.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_yum.yum_category IS 'yum_category';
+
+COMMENT ON COLUMN mth_yum.yum_title IS 'yum_title';
+
+COMMENT ON COLUMN mth_yum.yum_content IS 'yum_content';
+
+COMMENT ON COLUMN mth_yum.yum_state IS 'yum_state';
+
+COMMENT ON COLUMN mth_yum.yum_count IS 'yum_count';
+
+COMMENT ON COLUMN mth_yum.yum_writedate IS 'yum_writedate';
+
+CREATE UNIQUE INDEX PK_mth_yum
+	ON mth_yum (
+		yum_idx ASC
+	);
+
+ALTER TABLE mth_yum
+	ADD
+		CONSTRAINT PK_mth_yum
+		PRIMARY KEY (
+			yum_idx
+		);
+
+/* mth_yum_img */
+CREATE TABLE mth_yummy_img (
+	yum_img_idx NUMBER(10) NOT NULL, /* yum_img_idx */
+	yum_idx NUMBER(10) NOT NULL, /* yum_idx */
+	yum_img_imgfilename VARCHAR2(80) NOT NULL, /* yum_img_imgfilename */
+	yum_img_uploaddate DATE NOT NULL /* yum_img_uploaddate */
+);
+
+COMMENT ON TABLE mth_yummy_img IS 'mth_yum_img';
+
+COMMENT ON COLUMN mth_yummy_img.yum_img_idx IS 'yum_img_idx';
+
+COMMENT ON COLUMN mth_yummy_img.yum_idx IS 'yum_idx';
+
+COMMENT ON COLUMN mth_yummy_img.yum_img_imgfilename IS 'yum_img_imgfilename';
+
+COMMENT ON COLUMN mth_yummy_img.yum_img_uploaddate IS 'yum_img_uploaddate';
+
+CREATE UNIQUE INDEX PK_mth_yummy_img
+	ON mth_yummy_img (
+		yum_img_idx ASC
+	);
+
+ALTER TABLE mth_yummy_img
+	ADD
+		CONSTRAINT PK_mth_yummy_img
+		PRIMARY KEY (
+			yum_img_idx
+		);
+
+/* mth_prod */
+CREATE TABLE mth_prod (
+	prod_idx NUMBER(10) NOT NULL, /* prod_idx */
+	item_idx NUMBER(10) NOT NULL, /* item_idx */
+	conven_idx NUMBER(10) NOT NULL, /* conven_idx */
+	prod_content VARCHAR2(200) NOT NULL, /* prod_content */
+	prod_saleprice NUMBER(10) NOT NULL, /* prod_saleprice */
+	prod_salefinalprice NUMBER(10) NOT NULL, /* prod_salefinalprice */
+	prod_condition VARCHAR2(20) NOT NULL, /* prod_condition */
+	prod_exdate DATE NOT NULL, /* prod_exdate */
+	prod_regdate DATE NOT NULL /* prod_regdate */
+);
+
+COMMENT ON TABLE mth_prod IS 'mth_prod';
+
+COMMENT ON COLUMN mth_prod.prod_idx IS 'prod_idx';
+
+COMMENT ON COLUMN mth_prod.item_idx IS 'item_idx';
+
+COMMENT ON COLUMN mth_prod.conven_idx IS 'conven_idx';
+
+COMMENT ON COLUMN mth_prod.prod_content IS 'prod_content';
+
+COMMENT ON COLUMN mth_prod.prod_saleprice IS 'prod_saleprice';
+
+COMMENT ON COLUMN mth_prod.prod_salefinalprice IS 'prod_salefinalprice';
+
+COMMENT ON COLUMN mth_prod.prod_condition IS 'prod_condition';
+
+COMMENT ON COLUMN mth_prod.prod_exdate IS 'prod_exdate';
+
+COMMENT ON COLUMN mth_prod.prod_regdate IS 'prod_regdate';
+
+CREATE UNIQUE INDEX PK_mth_prod
+	ON mth_prod (
+		prod_idx ASC
+	);
+
+ALTER TABLE mth_prod
+	ADD
+		CONSTRAINT PK_mth_prod
+		PRIMARY KEY (
+			prod_idx
+		);
+
+/* mth_conven */
+CREATE TABLE mth_conven (
+	conven_idx NUMBER(10) NOT NULL, /* conven_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	brand_idx NUMBER(10) NOT NULL, /* brand_idx */
+	state_idx NUMBER(10) NOT NULL, /* state_idx */
+	conven_name VARCHAR2(40) NOT NULL, /* conven_name */
+	conven_adress VARCHAR2(60) NOT NULL, /* conven_adress */
+	conven_condition VARCHAR2(20) NOT NULL, /* conven_condition */
+	conven_regdate DATE NOT NULL /* conven_regdate */
+);
+
+COMMENT ON TABLE mth_conven IS 'mth_conven';
+
+COMMENT ON COLUMN mth_conven.conven_idx IS 'conven_idx';
+
+COMMENT ON COLUMN mth_conven.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_conven.brand_idx IS 'brand_idx';
+
+COMMENT ON COLUMN mth_conven.state_idx IS 'state_idx';
+
+COMMENT ON COLUMN mth_conven.conven_name IS 'conven_name';
+
+COMMENT ON COLUMN mth_conven.conven_adress IS 'conven_adress';
+
+COMMENT ON COLUMN mth_conven.conven_condition IS 'conven_condition';
+
+COMMENT ON COLUMN mth_conven.conven_regdate IS 'conven_regdate';
+
+CREATE UNIQUE INDEX PK_mth_conven
+	ON mth_conven (
+		conven_idx ASC
+	);
+
+ALTER TABLE mth_conven
+	ADD
+		CONSTRAINT PK_mth_conven
+		PRIMARY KEY (
+			conven_idx
+		);
+
+/* mth_conven_re */
+CREATE TABLE mth_conven_re (
+	conven_re_idx NUMBER(10) NOT NULL, /* conven_re_idx */
+	conven_idx NUMBER(10) NOT NULL, /* conven_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	conven_re_content VARCHAR2(100) NOT NULL, /* conven_re_content */
+	conven_re_state VARCHAR2(20) NOT NULL, /* conven_re_state */
+	conven_re_writedate DATE NOT NULL /* conven_re_writedate */
+);
+
+COMMENT ON TABLE mth_conven_re IS 'mth_conven_re';
+
+COMMENT ON COLUMN mth_conven_re.conven_re_idx IS 'conven_re_idx';
+
+COMMENT ON COLUMN mth_conven_re.conven_idx IS 'conven_idx';
+
+COMMENT ON COLUMN mth_conven_re.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_conven_re.conven_re_content IS 'conven_re_content';
+
+COMMENT ON COLUMN mth_conven_re.conven_re_state IS 'conven_re_state';
+
+COMMENT ON COLUMN mth_conven_re.conven_re_writedate IS 'conven_re_writedate';
+
+CREATE UNIQUE INDEX PK_mth_conven_re
+	ON mth_conven_re (
+		conven_re_idx ASC
+	);
+
+ALTER TABLE mth_conven_re
+	ADD
+		CONSTRAINT PK_mth_conven_re
+		PRIMARY KEY (
+			conven_re_idx
+		);
+
+/* mth_free_like */
+CREATE TABLE mth_free_like (
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	free_idx NUMBER(10) NOT NULL, /* free_idx */
+	free_like_regdate DATE NOT NULL /* free_like_regdate */
+);
+
+COMMENT ON TABLE mth_free_like IS 'mth_free_like';
+
+COMMENT ON COLUMN mth_free_like.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_free_like.free_idx IS 'free_idx';
+
+COMMENT ON COLUMN mth_free_like.free_like_regdate IS 'free_like_regdate';
+
+CREATE UNIQUE INDEX PK_mth_free_like
+	ON mth_free_like (
+		member_idx ASC,
+		free_idx ASC
+	);
+
+ALTER TABLE mth_free_like
+	ADD
+		CONSTRAINT PK_mth_free_like
+		PRIMARY KEY (
+			member_idx,
+			free_idx
+		);
+
+/* mth_free */
+CREATE TABLE mth_free (
+	free_idx NUMBER(10) NOT NULL, /* free_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	free_category VARCHAR2(10) NOT NULL, /* free_category */
+	free_title VARCHAR2(80) NOT NULL, /* free_title */
+	free_content VARCHAR2(4000) NOT NULL, /* free_content */
+	free_state VARCHAR2(20) NOT NULL, /* free_state */
+	free_count NUMBER(20) NOT NULL, /* free_count */
+	free_writedate DATE NOT NULL /* free_writedate */
+);
+
+COMMENT ON TABLE mth_free IS 'mth_free';
+
+COMMENT ON COLUMN mth_free.free_idx IS 'free_idx';
+
+COMMENT ON COLUMN mth_free.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_free.free_category IS 'free_category';
+
+COMMENT ON COLUMN mth_free.free_title IS 'free_title';
+
+COMMENT ON COLUMN mth_free.free_content IS 'free_content';
+
+COMMENT ON COLUMN mth_free.free_state IS 'free_state';
+
+COMMENT ON COLUMN mth_free.free_count IS 'free_count';
+
+COMMENT ON COLUMN mth_free.free_writedate IS 'free_writedate';
+
+CREATE UNIQUE INDEX PK_mth_free
+	ON mth_free (
+		free_idx ASC
+	);
+
+ALTER TABLE mth_free
+	ADD
+		CONSTRAINT PK_mth_free
+		PRIMARY KEY (
+			free_idx
+		);
+
+/* mth_free_img */
+CREATE TABLE mth_free_img (
+	free_img_idx NUMBER(10) NOT NULL, /* free_img_idx */
+	free_idx NUMBER(10) NOT NULL, /* free_idx */
+	free_img_imgfilename VARCHAR2(80) NOT NULL, /* free_img_imgfilename */
+	free_img_uploaddate DATE NOT NULL /* free_img_uploaddate */
+);
+
+COMMENT ON TABLE mth_free_img IS 'mth_free_img';
+
+COMMENT ON COLUMN mth_free_img.free_img_idx IS 'free_img_idx';
+
+COMMENT ON COLUMN mth_free_img.free_idx IS 'free_idx';
+
+COMMENT ON COLUMN mth_free_img.free_img_imgfilename IS 'free_img_imgfilename';
+
+COMMENT ON COLUMN mth_free_img.free_img_uploaddate IS 'free_img_uploaddate';
+
+CREATE UNIQUE INDEX PK_mth_free_img
+	ON mth_free_img (
+		free_img_idx ASC
+	);
+
+ALTER TABLE mth_free_img
+	ADD
+		CONSTRAINT PK_mth_free_img
+		PRIMARY KEY (
+			free_img_idx
+		);
+
+/* mth_report */
+CREATE TABLE mth_report (
+	report_idx NUMBER(10) NOT NULL, /* report_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	report_title VARCHAR2(20) NOT NULL, /* report_title */
+	report_content VARCHAR2(100) NOT NULL, /* report_content */
+	report_where VARCHAR2(20) NOT NULL, /* report_where */
+	report_where_idx VARCHAR2(10) NOT NULL, /* report_where_idx */
+	report_condition VARCHAR2(20) NOT NULL, /* report_condition */
+	report_writedate DATE NOT NULL /* report_writedate */
+);
+
+COMMENT ON TABLE mth_report IS 'mth_report';
+
+COMMENT ON COLUMN mth_report.report_idx IS 'report_idx';
+
+COMMENT ON COLUMN mth_report.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_report.report_title IS 'report_title';
+
+COMMENT ON COLUMN mth_report.report_content IS 'report_content';
+
+COMMENT ON COLUMN mth_report.report_where IS 'report_where';
+
+COMMENT ON COLUMN mth_report.report_where_idx IS 'report_where_idx';
+
+COMMENT ON COLUMN mth_report.report_condition IS 'report_condition';
+
+COMMENT ON COLUMN mth_report.report_writedate IS 'report_writedate';
+
+CREATE UNIQUE INDEX PK_mth_report
+	ON mth_report (
+		report_idx ASC
+	);
+
+ALTER TABLE mth_report
+	ADD
+		CONSTRAINT PK_mth_report
+		PRIMARY KEY (
+			report_idx
+		);
+
+/* mth_free_re */
+CREATE TABLE mth_free_re (
+	free_re_idx NUMBER(10) NOT NULL, /* free_re_idx */
+	free_idx NUMBER(10) NOT NULL, /* free_idx */
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	free_re_content VARCHAR2(100) NOT NULL, /* free_re_content */
+	free_re_state VARCHAR2(20) NOT NULL, /* free_re_state */
+	free_re_writedate DATE NOT NULL /* free_re_writedate */
+);
+
+COMMENT ON TABLE mth_free_re IS 'mth_free_re';
+
+COMMENT ON COLUMN mth_free_re.free_re_idx IS 'free_re_idx';
+
+COMMENT ON COLUMN mth_free_re.free_idx IS 'free_idx';
+
+COMMENT ON COLUMN mth_free_re.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_free_re.free_re_content IS 'free_re_content';
+
+COMMENT ON COLUMN mth_free_re.free_re_state IS 'free_re_state';
+
+COMMENT ON COLUMN mth_free_re.free_re_writedate IS 'free_re_writedate';
+
+CREATE UNIQUE INDEX PK_mth_free_re
+	ON mth_free_re (
+		free_re_idx ASC
+	);
+
+ALTER TABLE mth_free_re
+	ADD
+		CONSTRAINT PK_mth_free_re
+		PRIMARY KEY (
+			free_re_idx
+		);
+
+/* mth_member_mail */
+CREATE TABLE mth_member_mail (
+	member_idx NUMBER(10) NOT NULL, /* member_idx */
+	key VARCHAR2(50) NOT NULL, /* key */
+	certify_check VARCHAR2(2) NOT NULL, /* certify_check */
+	duedate DATE NOT NULL /* duedate */
+);
+
+COMMENT ON TABLE mth_member_mail IS 'mth_member_mail';
+
+COMMENT ON COLUMN mth_member_mail.member_idx IS 'member_idx';
+
+COMMENT ON COLUMN mth_member_mail.key IS 'key';
+
+COMMENT ON COLUMN mth_member_mail.certify_check IS 'certify_check';
+
+COMMENT ON COLUMN mth_member_mail.duedate IS 'duedate';
+
+CREATE UNIQUE INDEX PK_mth_member_mail
+	ON mth_member_mail (
+		member_idx ASC
+	);
+
+ALTER TABLE mth_member_mail
+	ADD
+		CONSTRAINT PK_mth_member_mail
+		PRIMARY KEY (
+			member_idx
+		);
+
+ALTER TABLE mth_item
+	ADD
+		CONSTRAINT FK_mth_item_type_TO_mth_item
+		FOREIGN KEY (
+			item_type_idx
+		)
+		REFERENCES mth_item_type (
+			item_type_idx
+		);
+
+ALTER TABLE mth_item
+	ADD
+		CONSTRAINT FK_mth_brand_TO_mth_item
+		FOREIGN KEY (
+			brand_idx
+		)
+		REFERENCES mth_brand (
+			brand_idx
+		);
+
+ALTER TABLE mth_item_like
+	ADD
+		CONSTRAINT FK_mth_item_TO_mth_item_like
+		FOREIGN KEY (
+			item_idx
+		)
+		REFERENCES mth_item (
+			item_idx
+		);
+
+ALTER TABLE mth_item_like
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_item_like
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_item_re
+	ADD
+		CONSTRAINT FK_mth_item_TO_mth_item_re
+		FOREIGN KEY (
+			item_idx
+		)
+		REFERENCES mth_item (
+			item_idx
+		);
+
+ALTER TABLE mth_item_re
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_item_re
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_yum_re
+	ADD
+		CONSTRAINT FK_mth_yum_TO_mth_yum_re
+		FOREIGN KEY (
+			yum_idx
+		)
+		REFERENCES mth_yum (
+			yum_idx
+		);
+
+ALTER TABLE mth_yum_re
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_yum_re
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_favor
+	ADD
+		CONSTRAINT FK_mth_item_type_TO_mth_favor
+		FOREIGN KEY (
+			item_type_idx
+		)
+		REFERENCES mth_item_type (
+			item_type_idx
+		);
+
+ALTER TABLE mth_favor
+	ADD
+		CONSTRAINT FK_mth_brand_TO_mth_favor
+		FOREIGN KEY (
+			brand_idx
+		)
+		REFERENCES mth_brand (
+			brand_idx
+		);
+
+ALTER TABLE mth_favor
+	ADD
+		CONSTRAINT FK_mth_state_TO_mth_favor
+		FOREIGN KEY (
+			state_idx
+		)
+		REFERENCES mth_state (
+			state_idx
+		);
+
+ALTER TABLE mth_favor
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_favor
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_yum_like
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_yum_like
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_yum_like
+	ADD
+		CONSTRAINT FK_mth_yum_TO_mth_yum_like
+		FOREIGN KEY (
+			yum_idx
+		)
+		REFERENCES mth_yum (
+			yum_idx
+		);
+
+ALTER TABLE mth_yum
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_yum
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_yummy_img
+	ADD
+		CONSTRAINT FK_mth_yum_TO_mth_yummy_img
+		FOREIGN KEY (
+			yum_idx
+		)
+		REFERENCES mth_yum (
+			yum_idx
+		);
+
+ALTER TABLE mth_prod
+	ADD
+		CONSTRAINT FK_mth_conven_TO_mth_prod
+		FOREIGN KEY (
+			conven_idx
+		)
+		REFERENCES mth_conven (
+			conven_idx
+		);
+
+ALTER TABLE mth_prod
+	ADD
+		CONSTRAINT FK_mth_item_TO_mth_prod
+		FOREIGN KEY (
+			item_idx
+		)
+		REFERENCES mth_item (
+			item_idx
+		);
+
+ALTER TABLE mth_conven
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_conven
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_conven
+	ADD
+		CONSTRAINT FK_mth_brand_TO_mth_conven
+		FOREIGN KEY (
+			brand_idx
+		)
+		REFERENCES mth_brand (
+			brand_idx
+		);
+
+ALTER TABLE mth_conven
+	ADD
+		CONSTRAINT FK_mth_state_TO_mth_conven
+		FOREIGN KEY (
+			state_idx
+		)
+		REFERENCES mth_state (
+			state_idx
+		);
+
+ALTER TABLE mth_conven_re
+	ADD
+		CONSTRAINT FK_mth_conven_TO_mth_conven_re
+		FOREIGN KEY (
+			conven_idx
+		)
+		REFERENCES mth_conven (
+			conven_idx
+		);
+
+ALTER TABLE mth_conven_re
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_conven_re
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_free_like
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_free_like
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_free_like
+	ADD
+		CONSTRAINT FK_mth_free_TO_mth_free_like
+		FOREIGN KEY (
+			free_idx
+		)
+		REFERENCES mth_free (
+			free_idx
+		);
+
+ALTER TABLE mth_free
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_free
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_free_img
+	ADD
+		CONSTRAINT FK_mth_free_TO_mth_free_img
+		FOREIGN KEY (
+			free_idx
+		)
+		REFERENCES mth_free (
+			free_idx
+		);
+
+ALTER TABLE mth_report
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_report
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_free_re
+	ADD
+		CONSTRAINT FK_mth_free_TO_mth_free_re
+		FOREIGN KEY (
+			free_idx
+		)
+		REFERENCES mth_free (
+			free_idx
+		);
+
+ALTER TABLE mth_free_re
+	ADD
+		CONSTRAINT FK_mth_member_TO_mth_free_re
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+
+ALTER TABLE mth_member_mail
+	ADD
+		CONSTRAINT FK_mth_member_mail
+		FOREIGN KEY (
+			member_idx
+		)
+		REFERENCES mth_member (
+			member_idx
+		);
+--테이블 생성 끝
+--시퀀스 제거
+DROP SEQUENCE seq_brand_idx;
+DROP SEQUENCE seq_conven_idx;
+DROP SEQUENCE seq_conven_re_idx;
+DROP SEQUENCE seq_delmember_idx;
+DROP SEQUENCE seq_free_idx;
+DROP SEQUENCE seq_free_img_idx;
+DROP SEQUENCE seq_free_re_idx;
+DROP SEQUENCE seq_item_idx;
+DROP SEQUENCE seq_item_re_idx;
+DROP SEQUENCE seq_item_type_idx;
+DROP SEQUENCE seq_member_idx;
+DROP SEQUENCE seq_prod_idx;
+DROP SEQUENCE seq_report_idx;
+DROP SEQUENCE seq_state_idx;
+DROP SEQUENCE seq_yum_idx;
+DROP SEQUENCE seq_yum_img_idx;
+DROP SEQUENCE seq_yum_re_idx;
+--시퀀스 제거 끝
+--시퀀스 생성
+CREATE SEQUENCE seq_state_idx;
+CREATE SEQUENCE seq_brand_idx;
+CREATE SEQUENCE seq_item_type_idx;
+CREATE SEQUENCE seq_member_idx;
+CREATE SEQUENCE seq_conven_idx;
+CREATE SEQUENCE seq_yum_idx;
+CREATE SEQUENCE seq_yum_re_idx;
+CREATE SEQUENCE seq_delmember_idx;
+CREATE SEQUENCE seq_report_idx;
+CREATE SEQUENCE seq_free_idx;
+CREATE SEQUENCE seq_free_img_idx;
+CREATE SEQUENCE seq_conven_re_idx;
+CREATE SEQUENCE seq_item_re_idx;
+CREATE SEQUENCE seq_item_idx;
+CREATE SEQUENCE seq_yum_img_idx;
+CREATE SEQUENCE seq_free_re_idx;
+CREATE SEQUENCE seq_prod_idx;
+--시퀀스 생성끝
+--뷰 삭제
+drop view VIEW_ALL_BOARD_MYINFO;
+drop view VIEW_ALL_REPLY_MYINFO;
+drop view VIEW_ITEM_LIKE_MYINFO;
+--뷰 삭제 끝
+--뷰 생성
+create VIEW VIEW_ALL_BOARD_MYINFO
+AS
+(SELECT 'YUM' BOARD_NAME, YUM_IDX IDX, MEMBER_IDX, YUM_TITLE TITLE, YUM_WRITEDATE WRITEDATE
+FROM MTH_YUM
+WHERE YUM_STATE != 'HIDE'
+UNION ALL
+SELECT 'FREE' BOARD_NAME, FREE_IDX IDX, MEMBER_IDX, FREE_TITLE TITLE, FREE_WRITEDATE WRITEDATE
+FROM MTH_FREE
+WHERE FREE_STATE != 'HIDE');
+create VIEW VIEW_ALL_REPLY_MYINFO
+AS
+(SELECT 'YUM' RE_LOC, yum_idx LOC_IDX, MEMBER_IDX, yum_re_content RE_CONTENT, yum_re_writedate WRITEDATE FROM mth_yum_re WHERE yum_re_state !='HIDE')
+UNION ALL
+(SELECT 'FREE' RE_LOC, free_idx LOC_IDX, MEMBER_IDX, free_re_content RE_CONTENT, free_re_writedate WRITEDATE FROM mth_free_re WHERE free_re_state !='HIDE')
+UNION ALL
+(SELECT 'CONVEN' RE_LOC, conven_idx LOC_IDX, MEMBER_IDX, conven_re_content RE_CONTENT, conven_re_writedate WRITEDATE FROM MTH_CONVEN_RE WHERE conven_re_state !='HIDE')
+UNION ALL
+(SELECT 'ITEM' RE_LOC, item_idx LOC_IDX, MEMBER_IDX, item_re_content RE_CONTENT, item_re_writedate WRITEDATE FROM mth_item_re WHERE item_re_state !='HIDE');
+CREATE VIEW VIEW_ITEM_LIKE_MYINFO
+AS
+SELECT IL.ITEM_IDX, IL.MEMBER_IDX, B.BRAND_NAME, IT.ITEM_TYPE_NAME,I.ITEM_NAME, IL.ITEM_LIKE_REGDATE
+FROM MTH_ITEM_LIKE IL
+INNER JOIN MTH_ITEM I ON IL.ITEM_IDX = I.ITEM_IDX
+INNER JOIN MTH_BRAND B ON I.BRAND_IDX = B.BRAND_IDX
+INNER JOIN MTH_ITEM_TYPE IT ON IT.ITEM_TYPE_IDX = I.ITEM_TYPE_IDX;
+--뷰 생성 끝
+--기본 자료 넣기
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'강남구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'강동구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'강북구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'강서구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'관악구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'광진구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'구로구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'금천구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'노원구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'도봉구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'동대문구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'동작구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'마포구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'서대문구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'서초구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'성동구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'성북구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'송파구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'양천구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'영등포구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'용산구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'은평구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'종로구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'중구');
+INSERT INTO mth_state VALUES(seq_state_idx.nextval,'중랑구');
+
+
+INSERT INTO mth_brand VALUES(seq_brand_idx.nextval,'CU');
+INSERT INTO mth_brand VALUES(seq_brand_idx.nextval,'GS25');
+INSERT INTO mth_brand VALUES(seq_brand_idx.nextval,'세븐일레븐');
+INSERT INTO mth_brand VALUES(seq_brand_idx.nextval,'이마트24');
+INSERT INTO mth_brand VALUES(seq_brand_idx.nextval,'미니스톱');
+INSERT INTO mth_brand VALUES(100,'그외');
+
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'도시락');
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'김밥');
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'삼각김밥');
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'샌드위치');
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'햄버거');
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'빵');
+INSERT INTO mth_item_type VALUES(seq_item_type_idx.nextval,'기타');
+COMMIT;
+--기본 자료 끝
