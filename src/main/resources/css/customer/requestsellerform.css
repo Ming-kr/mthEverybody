@@ -1,0 +1,22 @@
+#requestSeller-input-box
+{
+	margin: 4em 2.5em;
+}
+
+.view-sys-msg
+{
+	padding-left: .2em;
+}
+.view-sys-msg span
+{
+	font-size: .8em;
+	color: red;
+}
+#requestSeller-form-wrap
+{
+	width: 50%;
+}
+#requestSellerForm-btn{
+	
+	text-align: right;
+}

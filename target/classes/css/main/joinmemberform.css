@@ -1,0 +1,22 @@
+#joinmember-input-box
+{
+	margin: 4em 2.5em;
+}
+
+.view-sys-msg
+{
+	padding-left: .2em;
+}
+.view-sys-msg span
+{
+	font-size: .8em;
+	color: red;
+}
+#joinmember-form-wrap
+{
+	width: 50%;
+}
+#joinmemberForm-btn{
+	
+	text-align: right;
+}

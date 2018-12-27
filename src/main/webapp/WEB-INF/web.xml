@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets 
+		and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- 필터 등록 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- ckfinder 끝 -->
+	<!-- 로그인 체크 필터 -->
+	<filter>
+		<filter-name>CheckLoginedSessionFilter</filter-name>
+		<filter-class>com.teamb.mth.filter.CheckLoginedSessionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CheckLoginedSessionFilter</filter-name>
+		<url-pattern>/memberMyInfo</url-pattern>
+		<url-pattern>/actionUpdateMemberMyInfo</url-pattern>
+		<url-pattern>/actionUpdateMemberPw</url-pattern>
+		<url-pattern>/actionUnsubscribeMember</url-pattern>
+		<url-pattern>/requestSellerForm</url-pattern>
+		<url-pattern>/actionRequestSellerForm</url-pattern>
+		<url-pattern>/seller/*</url-pattern>
+		<url-pattern>/admin/*</url-pattern>
+		<url-pattern>/freeboard/writeFreeContentForm</url-pattern>
+		<url-pattern>/freeboard/actionWriteFreeContentForm</url-pattern>
+		<url-pattern>/freeboard/updateFreeContentForm</url-pattern>
+		<url-pattern>/freeboard/actionUpdateFreeContentForm</url-pattern>
+		<url-pattern>/freeboard/deleteFreeContent</url-pattern>
+		<!-- <url-pattern>/freeboard/writeFreeReContent</url-pattern> -->
+		<url-pattern>/freeboard/deleteFreeReContent</url-pattern>
+		<url-pattern>/yummyboard/writeYummyContentForm</url-pattern>
+		<url-pattern>/yummyboard/actionWriteYummyContentForm</url-pattern>
+		<url-pattern>/yummyboard/updateYummyContentForm</url-pattern>
+		<url-pattern>/yummyboard/actionUpdateYummyContentForm</url-pattern>
+		<url-pattern>/yummyboard/deleteYummyContent</url-pattern>
+		<url-pattern>/yummyboard/writeYumReContent</url-pattern>
+		<url-pattern>/yummyboard/deleteYumReContent</url-pattern>
+		<url-pattern>/writeReportForm</url-pattern>
+		<url-pattern>/actionWriteReportForm</url-pattern>
+	</filter-mapping>
+	<filter>
+		<display-name>CheckAuthorityFilter</display-name>
+		<filter-name>CheckAuthorityFilter</filter-name>
+		<filter-class>com.teamb.mth.filter.CheckAuthorityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CheckAuthorityFilter</filter-name>
+		<url-pattern>/seller/*</url-pattern>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+	<error-page>
+   		<error-code>404</error-code>
+   		<location>/commons/pacmanErrorpage</location>
+	</error-page>
+</web-app>
